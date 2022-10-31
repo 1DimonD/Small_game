@@ -1,0 +1,61 @@
+<meta charset="UTF-8" />
+
+<style>
+    body {
+        background-image: url("abobus.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        backdrop-filter: blur(16px);
+        font-family: "Comic Sans MS";
+    }
+
+    .center {
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+        display: grid;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 100px;
+        color: white;
+    }
+
+    button {
+        height: 50px;
+        width: 49%;
+        font-size: 40px;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+<div class="grid-container center">
+    <h1 class="grid-item">Sus game</h1>
+    <div class="grid-item">
+        <button onclick="answer('yes')" onmouseover="changePos(this)">yes</button>
+        <button onclick="answer('no')">no</button>
+    </div>
+</div>
+</body>
+
+<script>
+    function RandInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+    function changePos(element) {
+        element.style.position = "absolute";
+        element.style.left = RandInt(1500);
+        element.style.top = RandInt(700);
+        element.style.width = "100px";
+    }
+    function answer(text) {
+        if(text === "no") {
+            alert("Неху... Нехай щастить!");
+        } else {
+            alert("WTF how is it possible?");
+        }
+    }
+</script>
